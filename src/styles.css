@@ -1,0 +1,15 @@
+:root {
+  --background-color: #ffffff;
+
+  --cor-secundaria: #facc15;
+}
+
+.toast-container {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
+.toast {
+  background-color: var(--background-color);
+}
