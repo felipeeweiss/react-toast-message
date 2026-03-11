@@ -4,5 +4,13 @@ type ToastProps = {
 };
 
 export function Toast({ message, type = 'info' }: ToastProps) {
-  return <div className={`toast toast-${type}`}>{message}</div>;
+  return (
+    <div className={`toast toast-${type}`}>
+      <img src="" />
+      <div>
+        <h1>{type}</h1>
+        <span>{message}</span>
+      </div>
+    </div>
+  );
 }
