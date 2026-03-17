@@ -1,11 +1,11 @@
 # React Toast Message
 
-A simple and customizable toast notification component for React applications.
+A simple toast notification component for React applications.
 
 ## Installation
 
 ```bash
-npm install react-toast-message
+npm install @felipeeweiss/react-toast-message
 ```
 
 ## Usage
@@ -80,7 +80,6 @@ function MyComponent() {
 
 ## Features
 
-- 🎨 Customizable toast types
 - ⏱️ Auto-dismiss after 3 seconds
 - 🎯 Simple API
 - 📦 Lightweight
