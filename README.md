@@ -13,7 +13,7 @@ npm install @felipeeweiss/react-toast-message
 ### 1. Wrap your app with ToastProvider
 
 ```tsx
-import { ToastProvider } from 'react-toast-message';
+import { ToastProvider } from '@felipeeweiss/react-toast-message';
 
 function App() {
   return <ToastProvider>{/* Your app components */}</ToastProvider>;
@@ -25,7 +25,7 @@ function App() {
 ### 2. Use the toast hook in your components
 
 ```tsx
-import { useToast } from 'react-toast-message';
+import { useToast } from '@felipeeweiss/react-toast-message';
 
 function MyComponent() {
   const { addToast } = useToast();
@@ -50,7 +50,7 @@ The component supports four toast types:
 ## Example
 
 ```tsx
-import { ToastProvider, useToast } from 'react-toast-message';
+import { ToastProvider, useToast } from '@felipeeweiss/react-toast-message';
 
 function App() {
   return (
