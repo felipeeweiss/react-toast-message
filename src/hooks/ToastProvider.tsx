@@ -6,7 +6,7 @@ export function ToastProvider({ children }: any) {
   const [toasts, setToasts] = useState<any[]>([]);
 
   function addToast(message: string, type?: string) {
-    const id = Date.now();
+    const id = `${Date.now()}-${Math.floor(Math.random() * 10000)}`;
 
     setToasts((prev) => [...prev, { id, message, type }]);
 
@@ -15,13 +15,22 @@ export function ToastProvider({ children }: any) {
     }, 3000);
   }
 
+  function removeToast(id: number) {
+    setToasts((prev) => prev.filter((t) => t.id !== id));
+  }
+
   return (
     <ToastContext.Provider value={{ addToast }}>
       {children}
 
       <div className="toast-container">
         {toasts.map((t) => (
-          <Toast key={t.id} message={t.message} type={t.type} />
+          <Toast
+            key={t.id}
+            message={t.message}
+            type={t.type}
+            onClose={() => removeToast(t.id)}
+          />
         ))}
       </div>
     </ToastContext.Provider>
