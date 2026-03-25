@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { IoClose } from 'react-icons/io5';
 import { Icon } from './Icon';
 import { Title } from './Title';
@@ -10,8 +11,23 @@ type ToastProps = {
 };
 
 export function Toast({ message, type = 'warning', onClose }: ToastProps) {
+  const [isExiting, setIsExiting] = useState(false);
+
+  const handleClose = () => {
+    setIsExiting(true);
+    setTimeout(onClose, 300);
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      handleClose();
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className={`toast toast-${type}`}>
+    <div className={`toast toast-${type} ${isExiting ? 'toast-exit' : ''}`}>
       <Icon type={type} />
 
       <div className="toast-text-container">
@@ -22,7 +38,7 @@ export function Toast({ message, type = 'warning', onClose }: ToastProps) {
       <IoClose
         size={22}
         color="lightgrey"
-        onClick={onClose}
+        onClick={handleClose}
         style={{ cursor: 'pointer' }}
       />
 

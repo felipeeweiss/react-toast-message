@@ -7,12 +7,7 @@ export function ToastProvider({ children }: any) {
 
   function addToast(message: string, type?: string) {
     const id = `${Date.now()}-${Math.floor(Math.random() * 10000)}`;
-
     setToasts((prev) => [...prev, { id, message, type }]);
-
-    setTimeout(() => {
-      setToasts((prev) => prev.filter((t) => t.id !== id));
-    }, 3000);
   }
 
   function removeToast(id: number) {
