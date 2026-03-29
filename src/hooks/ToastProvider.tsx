@@ -1,8 +1,16 @@
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { ToastContext } from '../context/ToastContext';
 import { Toast } from '../components/Toast';
 
-export function ToastProvider({ children }: any) {
+interface ToastProviderProps {
+  children: ReactNode;
+  animation?: boolean;
+}
+
+export function ToastProvider({
+  children,
+  animation = true,
+}: ToastProviderProps) {
   const [toasts, setToasts] = useState<any[]>([]);
 
   function addToast(message: string, type?: string) {
@@ -24,6 +32,7 @@ export function ToastProvider({ children }: any) {
             key={t.id}
             message={t.message}
             type={t.type}
+            animation={animation}
             onClose={() => removeToast(t.id)}
           />
         ))}

@@ -8,9 +8,15 @@ type ToastProps = {
   message: string;
   type?: ToastType;
   onClose: () => void;
+  animation: boolean;
 };
 
-export function Toast({ message, type = 'warning', onClose }: ToastProps) {
+export function Toast({
+  message,
+  type = 'warning',
+  onClose,
+  animation,
+}: ToastProps) {
   const [isExiting, setIsExiting] = useState(false);
 
   const handleClose = () => {
@@ -27,7 +33,9 @@ export function Toast({ message, type = 'warning', onClose }: ToastProps) {
   }, []);
 
   return (
-    <div className={`toast toast-${type} ${isExiting ? 'toast-exit' : ''}`}>
+    <div
+      className={`toast toast-${type} ${animation ? 'toast-enter' : ''} ${animation && isExiting ? 'toast-exit' : ''}`}
+    >
       <Icon type={type} />
 
       <div className="toast-text-container">
