@@ -38,6 +38,12 @@ function MyComponent() {
 }
 ```
 
+## Props
+
+| Property  | Type    | Default | Description                                         |
+| --------- | ------- | ------- | --------------------------------------------------- |
+| animation | boolean | true    | Enables or disables enter/exit animations globally. |
+
 ## Toast Types
 
 The component supports four toast types:
@@ -54,7 +60,8 @@ import { ToastProvider, useToast } from '@felipeeweiss/react-toast-message';
 
 function App() {
   return (
-    <ToastProvider>
+    // Disable animations for the entire app
+    <ToastProvider animation={false}>
       <MyComponent />
     </ToastProvider>
   );
@@ -81,6 +88,7 @@ function MyComponent() {
 ## Features
 
 - ⏱️ Auto-dismiss after 3 seconds
+- ✨ Optional animations (Enter/Exit)
 - 🎯 Simple API
 - 📦 Lightweight
 - 🔧 TypeScript support
