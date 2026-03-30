@@ -1,6 +1,11 @@
 {
   "name": "@felipeeweiss/react-toast-message",
   "version": "0.0.5",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/felipeeweiss/react-toast-message.git"
+  },
   "type": "module",
   "files": [
     "dist"
