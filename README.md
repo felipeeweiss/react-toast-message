@@ -1,4 +1,6 @@
 # React Toast Message
+![NPM Downloads (custom)](https://img.shields.io/npm/dw/%40felipeeweiss/react-toast-message?style=flat-square&color=blue)
+![NPM Downloads (total)](https://img.shields.io/npm/dt/%40felipeeweiss/react-toast-message?style=flat-square&color=green)
 
 A simple toast notification component for React applications.
 
