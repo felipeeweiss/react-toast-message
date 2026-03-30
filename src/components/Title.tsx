@@ -18,5 +18,5 @@ export function Title({ type }: TitleProps) {
     }
   };
 
-  return <h1 className="toast-title">{textByType()}</h1>;
+  return <span className="toast-title">{textByType()}</span>;
 }
