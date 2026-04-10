@@ -12,6 +12,12 @@ export default defineConfig({
     }),
     libInjectCss(),
   ],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./src/test/setup.ts'],
+    css: true,
+  },
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
