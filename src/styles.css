@@ -16,12 +16,19 @@
 }
 
 .toast-container {
-  position: absolute;
-  top: 5%;
-  right: 5%;
+  position: fixed;
+  z-index: 10000;
+  top: max(5%, env(safe-area-inset-top));
+  right: max(5%, env(safe-area-inset-right));
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  pointer-events: none;
+  contain: paint;
+}
+
+.toast-container .toast {
+  pointer-events: auto;
 }
 
 .toast {
